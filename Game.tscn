@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Paddle/Paddle.gd" type="Script" id=1]
 [ext_resource path="res://Ball/Ball_Container.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/confetti.png" type="Texture" id=7]
 [ext_resource path="res://Assets/bubble.png" type="Texture" id=8]
 [ext_resource path="res://Camera/Camera.gd" type="Script" id=9]
+[ext_resource path="res://Camera.gd" type="Script" id=10]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
@@ -339,6 +340,7 @@ text = "Quit"
 
 [node name="Camera" type="Camera2D" parent="HUD"]
 position = Vector2( 512, 384 )
+script = ExtResource( 10 )
 [connection signal="timeout" from="Background/Timer" to="Background" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Starting/Timer" to="Ball_Container" method="_on_Timer_timeout"]
 [connection signal="toggled" from="HUD/Menu/Color/Color" to="HUD" method="_on_Color_toggled"]
